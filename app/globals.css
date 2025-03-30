@@ -1,26 +1,188 @@
 @import "tailwindcss";
+@plugin "tailwindcss-animate";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+
+/* #0C310C, #228B22 and e9f3e9,  */
+
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Your existing theme variables */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+  
+  /* BuzzGet Light Theme */
+  --background: #e9f3e9;       /* Light mint background */
+  --foreground: #0C310C;       /* Dark green text */
+  --card: #ffffff;             /* White cards */
+  --card-foreground: #0C310C;
+  --popover: #ffffff;
+  --popover-foreground: #0C310C;
+  --primary: #228B22;          /* Vibrant green primary */
+  --primary-foreground: #ffffff;
+  --secondary: #e9f3e9;
+  --secondary-foreground: #0C310C;
+  --muted: #d1e7d1;           /* Slightly darker mint */
+  --muted-foreground: #3a5c3a; /* Muted dark green */
+  --accent: #d1e7d1;
+  --accent-foreground: #0C310C;
+  --destructive: #dc2626;     /* Keeping standard red */
+  --border: #b8d8b8;          /* Light green border */
+  --input: #b8d8b8;
+  --ring: #228B22;            /* Vibrant green focus ring */
+  
+  /* Chart colors adjusted to greens */
+  --chart-1: #0C310C;         /* Dark green */
+  --chart-2: #228B22;         /* Vibrant green */
+  --chart-3: #3cb371;         /* Medium sea green */
+  --chart-4: #90ee90;         /* Light green */
+  --chart-5: #d1e7d1;         /* Pale green */
+  
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0C310C;
+  --sidebar-primary: #228B22;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e9f3e9;
+  --sidebar-accent-foreground: #0C310C;
+  --sidebar-border: #b8d8b8;
+  --sidebar-ring: #228B22;
+}
+
+.dark {
+  /* BuzzGet Dark Theme */
+  --background: #0C310C;       /* Dark green background */
+  --foreground: #e9f3e9;       /* Light mint text */
+  --card: #0a2a0a;             /* Slightly darker green */
+  --card-foreground: #e9f3e9;
+  --popover: #0a2a0a;
+  --popover-foreground: #e9f3e9;
+  --primary: #228B22;          /* Vibrant green primary */
+  --primary-foreground: #e9f3e9;
+  --secondary: #1a3d1a;        /* Darker green */
+  --secondary-foreground: #e9f3e9;
+  --muted: #1a3d1a;
+  --muted-foreground: #a8c8a8; /* Muted light green */
+  --accent: #1a3d1a;
+  --accent-foreground: #e9f3e9;
+  --destructive: #ef4444;     /* Brighter red for dark mode */
+  --border: #1a3d1a;          /* Dark green border */
+  --input: #1a3d1a;
+  --ring: #3cb371;            /* Medium sea green focus ring */
+  
+  /* Chart colors for dark mode */
+  --chart-1: #e9f3e9;         /* Light mint */
+  --chart-2: #90ee90;         /* Light green */
+  --chart-3: #3cb371;         /* Medium sea green */
+  --chart-4: #228B22;         /* Vibrant green */
+  --chart-5: #0a2a0a;         /* Very dark green */
+  
+  /* Sidebar */
+  --sidebar: #0a2a0a;
+  --sidebar-foreground: #e9f3e9;
+  --sidebar-primary: #228B22;
+  --sidebar-primary-foreground: #e9f3e9;
+  --sidebar-accent: #1a3d1a;
+  --sidebar-accent-foreground: #e9f3e9;
+  --sidebar-border: #1a3d1a;
+  --sidebar-ring: #3cb371;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .gradient-title {
+    @apply bg-gradient-to-br from-[#126312] to-[#8cc28c] font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text;
+  }
+  
+}
+
+/* Your existing animations */
+.hero-image-wrapper {
+  perspective: 1000px;
+}
+
+.hero-image {
+  transform: rotateX(15deg) scale(1);
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+.hero-image.scrolled {
+  transform: rotateX(0deg) scale(1) translateY(40px);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+}
+
+/* Optional: Add this if you want to respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
