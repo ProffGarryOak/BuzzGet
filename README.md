@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **BuzzGet - AI-Powered Financial Management**  
 
-## Getting Started
+![image](https://github.com/user-attachments/assets/3dfda51c-45af-440c-9eaa-378f3f9e0421)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Smart budgeting for a greener financial future.**  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+BuzzGet is an AI-powered financial management platform that helps you track, analyze, and optimize your spending with real-time insights.  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## **✨ Features**  
 
-To learn more about Next.js, take a look at the following resources:
+### **1. Advanced Analytics** 📊  
+- AI-driven spending insights  
+- Customizable financial reports  
+- Graphical dashboard for trends  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **2. Smart Receipt Scanner** 🧾  
+- Extract data from receipts using AI  
+- Auto-categorize expenses  
+- Supports multiple languages 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **3. Budget Planning** 💰  
+- AI-generated budget recommendations  
+- Spending limit alerts  
+- Monthly financial reports  
 
-## Deploy on Vercel
+### **4. Multi-Account Support** 🏦  
+- Track bank accounts, cards & investments  
+- Consolidated & individual analytics  
+- Secure API integrations  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **5. Recurring Transactions** 🔄  
+- Auto-detect subscriptions  
+- Payment reminders  
+- Scheduled expense tracking  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **6. Smart Notifications** 🔔  
+- Email reports (weekly/monthly)  
+- Budget threshold alerts  
+- Financial planning tips  
+
+---
+
+## **📸 Screenshots**  
+
+
+
+![image](https://github.com/user-attachments/assets/222ccf6c-3bba-4022-b853-e5d8980f3b9b)
+![image](https://github.com/user-attachments/assets/d54b6307-1f90-45a8-9961-115ff37a37fe)
+
+![image](https://github.com/user-attachments/assets/f99a52ab-bf2f-4dcc-a356-c4d91a2f8860)
+![image](https://github.com/user-attachments/assets/1fbe669b-4fd2-489c-8d26-846ce6a7a785)
+
+![image](https://github.com/user-attachments/assets/451df994-ac99-4e18-ad2d-d43a227e6f15)
+
+![image](https://github.com/user-attachments/assets/c7dadcb3-55a4-4b83-849b-334d0e88b993)
+
+
+---
+
+## **🚀 Installation**  
+
+### **Prerequisites**  
+- Node.js `v18+`  
+- PostgreSQL / MySQL  
+- Clerk Auth API Key  
+
+### **Steps**  
+1. Clone the repo:  
+   ```sh
+   git clone https://github.com/yourusername/buzzget.git
+   cd buzzget
+   ```  
+2. Install dependencies:  
+   ```sh
+   npm install
+   ```  
+3. Set up `.env` file:  
+   ```env
+   DATABASE_URL="your_db_url"
+   CLERK_PUBLISHABLE_KEY="your_clerk_key"
+   CLERK_SECRET_KEY="your_clerk_secret"
+   ```  
+4. Run the development server:  
+   ```sh
+   npm run dev
+   ```  
+
+---
+
+## **🛠 Tech Stack**  
+- **Frontend**: Next.js, Tailwind CSS, ShadCN UI  
+- **Backend**: Next.js API Routes  
+- **Auth**: Clerk  
+- **Database**: PostgreSQL  
+- **AI**: OpenAI (for insights)  
+- **Email**: Resend / Nodemailer  
+
+---
+
+
+
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## Contacts
+
+### LinkedIn http://www.linkedin.com/in/adarshpandey1133
+### Instagram https://www.instagram.com/rnkpandey/
+### mail adarshp.1133@gmail.com
+### Twitter https://x.com/proffgarryoak
+### Portfolio adarshp1133@vercel.app
+
