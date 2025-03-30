@@ -11,7 +11,7 @@ import { Metadata } from 'next'
 
 
 export const metadata = {
-  title: "Welth",
+  title: "Buzzget",
   description: "One stop Finance Platform",
   icons: {
     icon: [
