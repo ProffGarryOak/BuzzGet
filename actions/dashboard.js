@@ -3,7 +3,7 @@
 
 import { db } from "@/lib/prisma";
 
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
 
@@ -25,12 +25,22 @@ const serializeTransaction = (obj) => {
     const { userId } = await auth();
     if (!userId) throw new Error("Unauthorized");
   
-    const user = await db.user.findUnique({
+    let user = await db.user.findUnique({
       where: { clerkUserId: userId },
     });
   
+    // Auto-create user if not found
     if (!user) {
-      throw new Error("User not found");
+      const clerkUser = await currentUser();
+      if (!clerkUser) throw new Error("Clerk user not found");
+      user = await db.user.create({
+        data: {
+          clerkUserId: clerkUser.id,
+          email: clerkUser.emailAddresses[0].emailAddress,
+          name: `${clerkUser.firstName || ''} ${clerkUser.lastName || ''}`.trim(),
+          imageUrl: clerkUser.imageUrl,
+        },
+      });
     }
   
     try {
@@ -120,12 +130,22 @@ export async function createAccount(data) {
     const { userId } = await auth();
     if (!userId) throw new Error("Unauthorized");
   
-    const user = await db.user.findUnique({
+    let user = await db.user.findUnique({
       where: { clerkUserId: userId },
     });
   
+    // Auto-create user if not found
     if (!user) {
-      throw new Error("User not found");
+      const clerkUser = await currentUser();
+      if (!clerkUser) throw new Error("Clerk user not found");
+      user = await db.user.create({
+        data: {
+          clerkUserId: clerkUser.id,
+          email: clerkUser.emailAddresses[0].emailAddress,
+          name: `${clerkUser.firstName || ''} ${clerkUser.lastName || ''}`.trim(),
+          imageUrl: clerkUser.imageUrl,
+        },
+      });
     }
   
     // Get all user transactions

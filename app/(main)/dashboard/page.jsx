@@ -7,9 +7,6 @@ import { AccountCard } from './_components/account-card';
 import { getCurrentBudget } from '@/actions/budget';
 import { BudgetProgress } from './_components/budget-progress';
 import { DashboardOverview } from './_components/transaction-overview';
-
-
-
 export default async function DashboardPage() {
 
   const [accounts, transactions] = await Promise.all([
@@ -26,24 +23,18 @@ export default async function DashboardPage() {
   if (defaultAccount) {
     budgetData = await getCurrentBudget(defaultAccount.id);
   }
-
-
   return (
     <div className="space-y-8">
       
       {defaultAccount && (<BudgetProgress
       initialBudget={budgetData?.budget}
       currentExpenses={budgetData?.currentExpenses || 0}/>)}
-
-
       <Suspense>
       <DashboardOverview
         accounts={accounts}
         transactions={transactions || []}
       />
       </Suspense>
-
-
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <CreateAccountDrawer>
           <Card className="hover:shadow-md transition-shadow cursor-pointer border-dashed">
@@ -61,5 +52,3 @@ export default async function DashboardPage() {
     </div>
   )
 }
-
-

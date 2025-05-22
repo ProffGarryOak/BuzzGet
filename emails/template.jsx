@@ -121,13 +121,6 @@ export default function EmailTemplate({
   
 }
 
-
-
-
-
-
-
-
 const styles = {
     body: {
       backgroundColor: "#f6f9fc",
